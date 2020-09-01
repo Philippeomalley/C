@@ -285,7 +285,7 @@ int** readFile(int** board, int *boardSize, char* filename, int *numColours) {
 		rowCount++;
 		fclose(boardFile);
 		/*a valid board should have rowcount squared equal to numberCount*/
-		if(pow(rowCount, 2) == numberCount && rowCount <= MAXBOARDSIZE){
+		if(rowCount*rowCount == numberCount && rowCount <= MAXBOARDSIZE){
 			*boardSize = rowCount;
 			board=loadBoard(board, boardSize, filename);
 			return board;
